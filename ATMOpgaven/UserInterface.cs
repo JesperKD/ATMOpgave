@@ -41,7 +41,7 @@ namespace ATMOpgaven
                         try
                         {
                             int pincode = int.Parse(Console.ReadLine());
-                            CreditCard credit = CardBank.SaveNewcard(actorName, pincode);
+                            CreditCard credit = CardBank.GenerateNewCard(actorName, pincode);
 
                             Console.Clear();
                             Console.WriteLine("Your new card has now been registered.");

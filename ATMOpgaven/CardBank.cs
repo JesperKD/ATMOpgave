@@ -9,26 +9,31 @@ namespace ATMOpgaven
 {
     public static class CardBank
     {
+        public static CreditCard GenerateNewCard(string name, int pincode)
+        {
+            Random random = new Random();
+            CreditCard creditCard = new CreditCard(random.Next(1000000000, int.MaxValue), name, random.Next(100, 999), pincode);
+            SaveNewcard(creditCard);
+            return creditCard;
+
+        }
+
         /// <summary>
         /// Saves a card in the txt file and returns it to the view
         /// </summary>
         /// <param name="name"></param>
         /// <param name="pincode"></param>
         /// <returns></returns>
-        public static CreditCard SaveNewcard(string name, int pincode)
+        public static void SaveNewcard(CreditCard creditCard)
         {
-            Random random = new Random();
             string path = Environment.CurrentDirectory + "\\CardBank.txt";
             try
             {
-                CreditCard creditCard = new CreditCard(random.Next(1000000000, int.MaxValue), name, random.Next(100, 999), pincode);
-                File.AppendAllText(path, $"{creditCard.CardNumber}; {creditCard.NameOfOwner}; {creditCard.SecurityNumber}; {creditCard.PinCode}\n");
-                return creditCard;
+                File.AppendAllText(path, $"{ConvertCardToString(creditCard)}\n");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return null;
             }
         }
 
@@ -39,14 +44,12 @@ namespace ATMOpgaven
         /// <returns></returns>
         public static bool CheckIfCardExists(CreditCard creditCard)
         {
-            string path = Environment.CurrentDirectory + "\\CardBank.txt";
-            string cardString = $"{creditCard.CardNumber}; {creditCard.NameOfOwner}; {creditCard.SecurityNumber}; {creditCard.PinCode}";
-
+            string[] allCards = GetAllCards();
             try
             {
-                foreach (string line in File.ReadAllLines(path))
+                foreach (string line in allCards)
                 {
-                    if (line == cardString)
+                    if (line == ConvertCardToString(creditCard))
                     {
                         return true;
                     }
@@ -56,9 +59,27 @@ namespace ATMOpgaven
             {
                 Console.WriteLine(ex.Message);
             }
-
             return false;
         }
 
+        /// <summary>
+        /// Returns a string array of all saved cards
+        /// </summary>
+        /// <returns></returns>
+        public static string[] GetAllCards()
+        {
+            string path = Environment.CurrentDirectory + "\\CardBank.txt";
+            return File.ReadAllLines(path);
+        }
+
+        /// <summary>
+        /// Returns all creditCard data as a single string
+        /// </summary>
+        /// <param name="creditCard"></param>
+        /// <returns></returns>
+        public static string ConvertCardToString(CreditCard creditCard)
+        {
+            return $"{creditCard.CardNumber}; {creditCard.NameOfOwner}; {creditCard.SecurityNumber}; {creditCard.PinCode}";
+        }
     }
 }
