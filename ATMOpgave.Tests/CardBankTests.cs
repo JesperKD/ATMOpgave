@@ -14,13 +14,15 @@ namespace ATMOpgaven.Tests
         {
             string[] initialCollection = CardBank.GetAllCards();
 
-            CardBank.GenerateNewCard("bruh", 134);
+            CardBank.GenerateNewCard("Test", 1234);
 
             string[] updatedCollection = CardBank.GetAllCards();
 
             //Assert
             Assert.True(initialCollection != updatedCollection);
         }
+
+
 
 
     }
