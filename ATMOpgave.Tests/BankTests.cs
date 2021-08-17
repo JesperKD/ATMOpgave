@@ -11,32 +11,34 @@ namespace ATMOpgaven.Tests
     public class BankTests
     {
 
-        //[Fact]
-        //public void Withdraw_ShouldRemoveFromAmount()
-        //{
-        //    //Arrange
-        //    bool expected = true;
+        [Fact]
+        public void Withdraw_ShouldRemoveFromAmount()
+        {
+            //Test Card
+            CreditCard testCard = new CreditCard(1, "Test", 1, 1);
+            int withAmount = 200;
 
-        //    //Act
-        //    bool actual = Bank.WithdrawMoney();
+            int initialAmount = Bank.GetCurrentAmount(testCard);
+            int newAmount = Bank.WithdrawMoney(testCard, withAmount);
 
-        //    //Assert
-        //    Assert.Equal(expected, actual);
-        //}
+            //Assert
+            Assert.True(initialAmount > newAmount);
+        }
 
-        //[Fact]
-        //public void Deposit_ShouldAddToAmount()
-        //{
-        //    //Arrange
-        //    bool expected = true;
+        [Fact]
+        public void Deposit_ShouldAddToAmount()
+        {
+            //Test Card
+            CreditCard testCard = new CreditCard(1, "Test", 1, 1);
+            int depositAmount = 5000;
 
-        //    //Act
-        //    bool actual = Bank.DepositMoney();
+            int initialAmount = Bank.GetCurrentAmount(testCard);
+            int newAmount = Bank.DepositMoney(testCard, depositAmount);
 
-        //    //Assert
-        //    Assert.Equal(expected, actual);
+            //Assert
+            Assert.True(initialAmount < newAmount);
 
-        //}
+        }
 
     }
 }
