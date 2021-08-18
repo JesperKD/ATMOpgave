@@ -49,7 +49,8 @@ namespace ATMOpgaven
                             Console.WriteLine($"Cardnumber: {credit.CardNumber}");
                             Console.WriteLine($"Name of Owner: {credit.NameOfOwner}");
                             Console.WriteLine($"Security Number: {credit.SecurityNumber}");
-                            Console.WriteLine($"Pin: {credit.PinCode}");
+                            Console.WriteLine($"Pin: {credit.PinCode}\n\n");
+                            Console.WriteLine("Have a lovely day.");
                             Console.ReadKey();
                         }
                         catch (Exception ex)
