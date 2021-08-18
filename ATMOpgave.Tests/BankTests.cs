@@ -16,7 +16,7 @@ namespace ATMOpgaven.Tests
         {
             //Test Card
             CreditCard testCard = new CreditCard(1, "Test", 1, 1);
-            int withAmount = 200;
+            int withAmount = 5000;
 
             int initialAmount = Bank.GetCurrentAmount(testCard);
             int newAmount = Bank.WithdrawMoney(testCard, withAmount);

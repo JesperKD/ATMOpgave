@@ -5,3 +5,10 @@ C:\Users\Jespe\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.csproj.Cor
 C:\Users\Jespe\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.exe
 C:\Users\Jespe\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.pdb
 C:\Users\Jespe\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.csproj.AssemblyReference.cache
+C:\Users\jesp446c\source\repos\ATMOpgave\ATMOpgaven\bin\Debug\ATMOpgaven.exe.config
+C:\Users\jesp446c\source\repos\ATMOpgave\ATMOpgaven\bin\Debug\ATMOpgaven.exe
+C:\Users\jesp446c\source\repos\ATMOpgave\ATMOpgaven\bin\Debug\ATMOpgaven.pdb
+C:\Users\jesp446c\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.csproj.AssemblyReference.cache
+C:\Users\jesp446c\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.csproj.CoreCompileInputs.cache
+C:\Users\jesp446c\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.exe
+C:\Users\jesp446c\source\repos\ATMOpgave\ATMOpgaven\obj\Debug\ATMOpgaven.pdb

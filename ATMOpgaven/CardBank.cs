@@ -15,7 +15,6 @@ namespace ATMOpgaven
             CreditCard creditCard = new CreditCard(random.Next(1000000000, int.MaxValue), name, random.Next(100, 999), pincode);
             SaveNewcard(creditCard);
             return creditCard;
-
         }
 
         /// <summary>

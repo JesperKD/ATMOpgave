@@ -22,8 +22,5 @@ namespace ATMOpgaven.Tests
             Assert.True(initialCollection != updatedCollection);
         }
 
-
-
-
     }
 }
